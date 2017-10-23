@@ -1,0 +1,6 @@
+#!/bin/bash
+# My first script
+
+while read p; do
+  echo $p
+done <dataSource.txt
