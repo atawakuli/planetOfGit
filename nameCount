@@ -2,16 +2,31 @@
 #Amal Tawakuli
 # My first script
 E=0
-J="Jane" 
-M="Mary"
-C="Catherine"
-L="Lydia"
+J=0 
+M=0
+C=0
+L=0
 while read line; do
 	for word in $line; do
-		echo "$word ||"
-		if [ "$word" == "$J" ]; then
+		if [[ $word =~ Elizabeth ]]; then
 			E=$((E+1))
+		fi
+		if [[ $word =~ Jane ]]; then
+			J=$((J+1))
+		fi
+		if [[ $word =~ Mary ]]; then
+			M=$((M+1))
+		fi
+		if [[ $word =~ Catherine ]]; then
+			C=$((C+1))
+		fi
+		if [[ $word =~ Lydia ]]; then
+			L=$((L+1))
 		fi
 	done
 done <dataSource.txt
-echo "Jane occured $E times."
+echo "Elizabeth occured $E times."
+echo "Jane occured $J times."
+echo "Mary occured $M times."
+echo "Catherine occured $C times."
+echo "Lydia occured $L times."
