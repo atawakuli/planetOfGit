@@ -1,6 +1,17 @@
 #!/bin/bash
+#Amal Tawakuli
 # My first script
-
-while read p; do
-  echo $p
+E=0
+J="Jane" 
+M="Mary"
+C="Catherine"
+L="Lydia"
+while read line; do
+	for word in $line; do
+		echo "$word ||"
+		if [ "$word" == "$J" ]; then
+			E=$((E+1))
+		fi
+	done
 done <dataSource.txt
+echo "Jane occured $E times."
